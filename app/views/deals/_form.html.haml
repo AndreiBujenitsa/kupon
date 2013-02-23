@@ -1,0 +1,36 @@
+:css
+  form.form-horizontal textarea{height:400px; width:100%;}
+  
+= form_for @deal, :html=>{:class=>"form-horizontal"} do |f|
+  = form_errors(@deal)
+  .row
+    .span5
+      .control-group
+        = f.label :title, :class=>"control-label"
+        .controls= f.text_field :title
+      .control-group
+        = f.label :discount, :class=>"control-label"
+        .controls.input-append{:style=>"margin-left:20px;"}
+          = f.number_field :discount    
+          %span.add-on %
+      .control-group
+        = f.label :start_at, :class=>"control-label"
+        .controls.input-append.date#date_from{:style=>"margin-left:20px;"}
+          - start_at = f.object.start_at.blank? ? Time.now : f.object.start_at
+          = f.text_field :start_at, :data=>{:format=>"yyyy-MM-dd hh:mm:ss"}, :value => datetime2str(start_at)
+          %span.add-on
+            %i.icon-calendar{"data-time-icon"=>"icon-time", "data-date-icon"=>"icon-calendar"}
+      .control-group
+        - end_at = f.object.end_at.blank? ? Time.now : f.object.end_at
+        = f.label :end_at, :class=>"control-label"
+        .controls.input-append.date#date_to{:style=>"margin-left:20px;"}
+          = f.text_field :end_at, :data=>{:format=>"yyyy-MM-dd hh:mm:ss"}, :value => datetime2str(end_at)
+          %span.add-on
+            %i.icon-calendar{"data-time-icon"=>"icon-time", "data-date-icon"=>"icon-calendar"}
+    .span7
+      .control-group
+        = f.label :description, :class=>"control-label"
+        .controls= f.text_area :description, :class=>:wysihtml5, :placeholder=>"Enter text"
+  .form-actions
+    %button.btn.btn-primary{:type=>"submit"} Create Process
+=render "javascript"

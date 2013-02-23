@@ -2,23 +2,20 @@
 %html
   %head
     %title Kupon
-    = stylesheet_link_tag    "application"
+    = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
     %meta{"http-equiv"=>"Content-Type", "content"=>"text/html; charset=utf-8"}
   %body
-    #wrapper
-      #header
-        .left-side
-          -if user_signed_in?
-            %span=current_user.name
-            =link_to "Выход", destroy_user_session_path
-          -else
-            =link_to "Вход", new_user_session_path
-            \/
-            =link_to "Регистрация", new_user_registration_path
-      #content
-        = yield
-    #footer
+    = render 'layouts/navbar'
+    .container-fluid
+      .row-fluid
+        - if current_user
+          .span2
+            = render "layouts/sidebar"
+        .span10
+          =yield
+    =render "layouts/modal"
+    
 
 

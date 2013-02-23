@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/shopandship/!svn/ver/76/NYCMSK/trunk/app/views/shared
+END
+_empty.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/shopandship/!svn/ver/23/NYCMSK/trunk/app/views/shared/_empty.html.haml
+END
+_errors.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/shopandship/!svn/ver/76/NYCMSK/trunk/app/views/shared/_errors.html.haml
+END

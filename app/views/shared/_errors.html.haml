@@ -1,0 +1,8 @@
+-if resource.errors.any?
+  %div{:class=>"alert alert-error"}
+    %a{:class=>"close", "data-dismiss"=>"alert"}
+    %h2= t(:form_error, :number =>  t(:form_error_number, :count => resource.errors.count))
+    %ul
+      - resource.errors.full_messages.each do |msg|
+        %li= msg
+

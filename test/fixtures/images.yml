@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  attachment: MyString
+  deal_id: 1
+
+two:
+  attachment: MyString
+  deal_id: 1

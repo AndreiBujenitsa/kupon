@@ -1,12 +1,20 @@
 Kupon::Application.routes.draw do
-  devise_for :users
-  authenticated do
+  resources :deals
+
+
+  scope "(:locale)", :locale => /en|ru/ do
+    devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
+    devise_scope :user do
+      get "users"  => "devise/registrations#new"
+    end
+    authenticated do
       root :to => "dashboard#index"
     end
 
     unauthenticated do
       root :to => "dashboard#index"
     end
+  end#scope locale
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

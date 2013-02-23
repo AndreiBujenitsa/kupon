@@ -1,0 +1,8 @@
+- if devise_mapping.omniauthable?
+  .row{:style=>"margin:30px 0 0;"}
+    .span4 
+      .sign_with=t(:sign_with)
+    - resource_class.omniauth_providers.each do |provider|
+      .span2
+        = link_to omniauth_authorize_path(resource_name, provider) do
+          =image_tag "#{provider}_64.png"

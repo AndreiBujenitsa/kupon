@@ -1,0 +1,37 @@
+ru:
+  #devise
+  sign_in: Войти
+  sign_out: Выход
+  sign_up:  Зарегистрироваться
+  forgot_password: Я забыл пароль
+  password_reset: Восстановление Пароля
+  send_instructions: Выслать инструкции
+  remember_me: Запомнить меня
+  sign_with: "Войти через:"
+  #misc
+  welcome: Добро пожаловать на Купон!
+  or: или
+  cancel: Отмена
+  back: Назад
+  
+  
+  activerecord:
+    errors:
+      messages:
+        carrierwave_processing_error: 'Cannot resize image.'
+        carrierwave_integrity_error: 'имеет неправильный формат. Попробуйте загрузить файл в формате jpg, jpeg, gif, png'
+    models:
+      deal: Акция
+      user: Пользователь
+      image: Изображение
+      price: Цена
+      condition: Условие
+      ticket: Купон
+      address:  Адрес
+    attributes:
+      deal:
+        title: Заголовок
+        description: Описание
+        start_at: Начало акции
+        end_at: Окончание акции
+        discount: Скидка

@@ -11,7 +11,63 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120105144635) do
+ActiveRecord::Schema.define(:version => 20130221200132) do
+
+  create_table "addresses", :force => true do |t|
+    t.string   "country"
+    t.string   "province"
+    t.string   "city"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "integer"
+    t.integer  "zip"
+    t.string   "site"
+    t.integer  "deal_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "conditions", :force => true do |t|
+    t.text     "description"
+    t.string   "type"
+    t.integer  "deal_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "deals", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "start_at"
+    t.string   "datetime"
+    t.datetime "end_at"
+    t.integer  "discount"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "attachment"
+    t.integer  "deal_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "prices", :force => true do |t|
+    t.text     "condition"
+    t.float    "amount"
+    t.integer  "deal_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tickets", :force => true do |t|
+    t.string   "code"
+    t.integer  "deal_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "",    :null => false

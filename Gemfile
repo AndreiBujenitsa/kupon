@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
-gem 'rake', '0.8.7'
+gem 'rails', '3.2.11'
+#gem 'rake', '0.8.7'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -12,13 +12,22 @@ gem 'mysql2'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'therubyracer', :platforms => :ruby
+  gem 'uglifier', '>= 1.0.3'
+  gem 'twitter-bootstrap-rails'
+  gem 'bootstrap-wysihtml5-rails'
+  gem "less-rails"
 end
 
 # Authentication
 gem 'devise'
+gem 'omniauth-openid'
+gem 'omniauth-google'
+gem 'omniauth-vkontakte'
+gem 'omniauth-facebook'
+
 # Templating
 gem 'haml'
 gem 'haml-rails'
