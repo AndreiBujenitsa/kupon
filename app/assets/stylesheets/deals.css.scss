@@ -4,6 +4,12 @@
 
 $box_color : #F6FCF6;
 
+@mixin shadow($color) {
+  -moz-box-shadow:    0 0 10px $color;
+  -webkit-box-shadow: 0 0 10px $color;
+  box-shadow:         0 0 10px $color;
+}
+
 @mixin rounded-corners($radius) {
   border-radius: $radius;
   -moz-border-radius: $radius;
@@ -25,6 +31,7 @@ $box_color : #F6FCF6;
 .box{
   border: 1px solid darken($box_color, 60%);
   margin-bottom: 2.12766%;
+  @include shadow(#5E3802);
   @include rounded-corners(5px);
   padding: 5px;
   .box-content{
