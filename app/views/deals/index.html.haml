@@ -1,27 +1,4 @@
 %h1 Listing deals
-
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Start at
-    %th End at
-    %th Discount
-    %th
-    %th
-    %th
-
-  - @deals.each do |deal|
-    %tr
-      %td= deal.title
-      %td= deal.description
-      %td= deal.start_at
-      %td= deal.end_at
-      %td= deal.discount
-      %td= link_to 'Show', deal
-      %td= link_to 'Edit', edit_deal_path(deal)
-      %td= link_to 'Destroy', deal, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
+.row
+  =render "deals"
 = link_to 'New Deal', new_deal_path

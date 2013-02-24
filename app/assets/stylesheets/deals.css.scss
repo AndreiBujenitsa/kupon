@@ -1,3 +1,44 @@
 // Place all the styles related to the deals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$box_color : #F6FCF6;
+
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin rounded-corners-bottom($radius) {
+  border-radius: 0 0 $radius $radius;
+  -moz-border-radius: 0 0 $radius $radius;
+  -webkit-border-radius: 0 0 $radius $radius;
+}
+
+@mixin rounded-corners-top($radius) {
+  border-radius: $radius $radius 0 0;
+  -moz-border-radius: $radius $radius 0 0;
+  -webkit-border-radius: $radius $radius 0 0;
+}
+
+.box{
+  border: 1px solid darken($box_color, 60%);
+  margin-bottom: 2.12766%;
+  @include rounded-corners(5px);
+  padding: 5px;
+  .box-content{
+    height:220px;
+    overflow: hidden;
+    padding: 5px;
+    background-color: $box_color;
+    border: 1px solid darken($box_color, 30%);
+    @include rounded-corners-top(5px);
+  }
+  .actions{
+    background-color: darken($box_color, 60%);
+    height:30px;
+    padding:10px 5px 5px;
+    @include rounded-corners-bottom(5px);
+  }
+}

@@ -29,6 +29,12 @@ ru:
       ticket: Купон
       address:  Адрес
     attributes:
+      user:
+        first_name: Имя
+        last_name: Фамилия
+        email: Эл. Почта
+        password: Пароль
+        password_confirmation: Пароль еще раз
       deal:
         title: Заголовок
         description: Описание
