@@ -1,13 +1,13 @@
 .row
-- @deals.each do |deal|
-  .span3.box
-    .box-header
-      =deal.title
-    .box-content
-      = deal.description.html_safe
-    .box-footer
-      .pull-right
-        = link_to 'Show', deal, :class=>"btn btn-info"
-        = link_to 'Edit', edit_deal_path(deal), :class=>"btn btn-success"
-        = link_to 'Destroy', deal, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class=>"btn btn-danger"
+  - @deals.each do |deal|
+    .span3.box
+      .box-header
+        =deal.title
+      .box-content
+        = deal.description.html_safe
+      .box-footer
+        .pull-right
+          = link_to 'Show', deal, :class=>"btn btn-info"
+          = link_to 'Edit', edit_deal_path(deal), :class=>"btn btn-success"
+          = link_to 'Destroy', deal, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class=>"btn btn-danger"
     
