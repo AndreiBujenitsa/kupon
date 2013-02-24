@@ -1,11 +1,11 @@
 .row
 - @deals.each do |deal|
   .span3.box
+    .box-header
+      =deal.title
     .box-content
-      %dl
-        %dt= deal.title
-        %dd= deal.description.html_safe
-    .actions
+      = deal.description.html_safe
+    .box-footer
       .pull-right
         = link_to 'Show', deal, :class=>"btn btn-info"
         = link_to 'Edit', edit_deal_path(deal), :class=>"btn btn-success"
