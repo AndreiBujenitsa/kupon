@@ -4,6 +4,7 @@
 
 $box_content_color : #F6FCF6;
 $box-color: #fff;
+$box_shadow: #5E3802;
 
 @mixin shadow($color) {
   -moz-box-shadow:    0 0 10px $color;
@@ -33,7 +34,7 @@ $box-color: #fff;
   border: 1px solid darken($box_content_color, 60%);
   background-color: $box_color;
   margin-bottom: 2.12766%;
-  @include shadow(#5E3802);
+  @include shadow($box_shadow);
   @include rounded-corners(5px);
   padding: 5px;
   .box-header{
@@ -52,6 +53,7 @@ $box-color: #fff;
   .box-footer{
     background-color: darken($box_content_color, 20%);
     border: 1px solid darken($box_content_color, 30%);
+    border-top: none;
     height:30px;
     padding:10px 5px 5px;
     @include rounded-corners-bottom(5px);
