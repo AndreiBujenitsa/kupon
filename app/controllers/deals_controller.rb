@@ -80,4 +80,21 @@ class DealsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+  def upload
+    attachment = Image.new
+    attachment.save
+    attachment.attachment = params["files"][0]
+    attachment.save
+    viewHelper = Object.new.extend(ActionView::Helpers::NumberHelper)
+    render :json => ['name' => '<a href="' + attachment.attachment.to_s + '">' + params["files"][0].original_filename + '</a>', 'size' => viewHelper.number_to_human_size(File.size(params["files"][0].tempfile)), 'id' => attachment.id, 'thumb' => attachment.thumb_url, 'big_thumb' => attachment.big_thumb_url]
+  end
+  
+  def remove_upload
+    if params[:id] && Image.find(params[:id])
+      Image.find(params[:id]).destroy
+    end
+    @remove_id = params[:id]
+  end
 end

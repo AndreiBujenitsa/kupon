@@ -28,6 +28,11 @@ gem 'omniauth-google'
 gem 'omniauth-vkontakte'
 gem 'omniauth-facebook'
 
+# Uploader gem
+gem 'carrierwave' 
+gem 'rmagick'
+
+
 # Templating
 gem 'haml'
 gem 'haml-rails'

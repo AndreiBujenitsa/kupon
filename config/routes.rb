@@ -14,6 +14,9 @@ Kupon::Application.routes.draw do
     unauthenticated do
       root :to => "dashboard#index"
     end
+    
+    put 'upload' => 'deals#upload'
+    delete 'remove_upload/:id' => 'deals#remove_upload', :as=>:remove_upload
   end#scope locale
 
   # The priority is based upon order of creation:

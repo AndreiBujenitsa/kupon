@@ -1,0 +1,14 @@
+- @deal.images.each do |image|
+  - unless image.blank?
+    - id = image.id
+    .file_line{:id=>"file_row_#{id}"}
+      .thumb
+        %a.preview{:href=>image.big_thumb_url}
+          =image_tag image.thumb_url
+      .desc
+        =link_to image.attachment.to_s.split('/').last, image.attachment_url
+        ="(#{number_to_human_size(File.size("public/"+image.attachment.to_s))})"
+        %input{:type=>"hidden", :name=>"deal[files_ids][]", :value=>id}
+        %a{:href=>"/remove_upload/#{id}", :id=>"remove_file_#{id}", "data-remote"=>true, "data-method"=>"delete"}
+          %i.icon-trash
+  

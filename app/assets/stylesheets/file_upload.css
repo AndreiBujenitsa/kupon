@@ -1,0 +1,79 @@
+.fileinput-button {
+    float: right;
+    margin-top: 4px;
+    overflow: hidden;
+    position: relative;
+}
+.fileinput-button input {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    -moz-transform: translate(-300px, 0pt) scale(4);
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 0 100px 200px;
+    cursor: pointer;
+    direction: ltr;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.file_line {
+    padding: 5px 20px 5px 20px;
+    margin: 0;
+    height: 80px;
+}
+
+.file_line .thumb{
+    float: left;
+    height: 80px;
+}
+
+.file_line .desc{
+    padding-top: 31px;
+    padding-left: 65px;
+}
+
+#filesArea {
+    min-height: 100px;
+    background-color: #F9F9F9;
+    background-image:url("drop.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+}
+
+.bg-progress {
+    height: 45px;
+    padding: 4px;
+    margin: 8px;
+    background-color: #BAEBFF;
+}
+
+.bg-progress p {
+    height: 15px;
+}
+
+.fg-progress {
+    height: 20px;
+    width: 0px;
+    background-color: #21C0FF;
+}
+
+#filesArea.over {
+    background-image:url("drop.png");
+    background-color: #4f4f4f;
+}
+
+#preview{
+        position:absolute;
+        border:1px solid #ccc;
+        background:#333;
+        padding:5px;
+        display:none;
+        color:#fff;
+}

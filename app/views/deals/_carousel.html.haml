@@ -1,0 +1,22 @@
+- images = @deal.images
+- if images.any?
+  - carousel_id = "carousel_#{@deal.id}"
+  :css
+    .carousel.slide{width:480px;}
+    
+  .carousel.slide{:id=>carousel_id}
+    %ol.carousel-indicators
+      - images.each_with_index do |image, ind|
+        %li{:data=>{"slide-to"=>ind, :target=>"##{carousel_id}"}}
+    .carousel-inner
+      - images.each do |image|
+        .item.box
+          .box-header
+          .box-content=image_tag image.attachment.url(:carousel_thumb)
+          .carousel-caption
+            %h4 hello
+            %p this is the text that need to be pushed to description
+    %a.left.carousel-control{:href=>"##{carousel_id}", "data-slide"=>"prev"}‹
+    %a.right.carousel-control{:href=>"##{carousel_id}", "data-slide"=>"next"}›
+  :javascript
+    $('.carousel').carousel('cycle');
