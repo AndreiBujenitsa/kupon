@@ -9,12 +9,7 @@
   %body
     = render 'layouts/navbar'
     .container-fluid
-      .row-fluid
-        - if current_user
-          .span2
-            = render "layouts/sidebar"
-        .span10
-          =yield
+      =yield
     =render "layouts/modal"
     
 

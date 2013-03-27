@@ -1,22 +1,24 @@
-%p#notice= notice
-
-%p
-  %b Title:
-  = @deal.title
-%p
-  %b Description:
-  = render "carousel"
-  = @deal.description.html_safe
-%p
-  %b Start at:
-  = @deal.start_at
-%p
-  %b End at:
-  = @deal.end_at
-%p
-  %b Discount:
-  = @deal.discount
-
-= link_to 'Edit', edit_deal_path(@deal)
-\|
-= link_to 'Back', deals_path
+.row
+  .span8
+    %p#notice= notice
+    
+    %p
+      %b Title:
+      = @deal.title
+    %p
+      %b Description:
+      = render "carousel"
+      = @deal.description.html_safe
+    %p
+      %b Start at:
+      = @deal.start_at
+    %p
+      %b End at:
+      = @deal.end_at
+    %p
+      %b Discount:
+      = @deal.discount
+    
+    = link_to 'Edit', edit_deal_path(@deal)
+    \|
+    = link_to 'Back', deals_path

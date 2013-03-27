@@ -40,7 +40,7 @@
           #filesArea
           #dropZone
             -unless @deal.images.blank?
-              =render "process_attachments_fields"
+              =render "deal_attachments_fields"
           %span.btn.fileinput-button
             %span= 'Add file...'
             %input#inputFile{:type => 'file'}
@@ -49,5 +49,6 @@
         = f.label :description, :class=>"control-label"
         .controls= f.text_area :description, :class=>:wysihtml5, :placeholder=>"Enter text"
   .form-actions
-    %button.btn.btn-primary{:type=>"submit"} Create Process
+    %button.btn.btn-large{:type=>"submit"}=t(:save)
+    =link_to t(:cancel), :back, :class=>"btn btn-large"
 =render "javascript"

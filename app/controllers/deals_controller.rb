@@ -1,44 +1,25 @@
 class DealsController < ApplicationController
-  # GET /deals
-  # GET /deals.json
+  before_filter :find_deal, :only=>[:show, :edit, :update, :destroy]
+  
+  respond_to :html, :js
+  
   def index
     @deals = Deal.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @deals }
-    end
+    respond_with(@deals)
   end
 
-  # GET /deals/1
-  # GET /deals/1.json
   def show
-    @deal = Deal.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @deal }
-    end
+    respond_with(@deal)
   end
 
-  # GET /deals/new
-  # GET /deals/new.json
   def new
     @deal = Deal.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @deal }
-    end
+    respond_with(@deal)
   end
 
-  # GET /deals/1/edit
   def edit
-    @deal = Deal.find(params[:id])
   end
 
-  # POST /deals
-  # POST /deals.json
   def create
     @deal = Deal.new(params[:deal])
 
@@ -53,11 +34,7 @@ class DealsController < ApplicationController
     end
   end
 
-  # PUT /deals/1
-  # PUT /deals/1.json
   def update
-    @deal = Deal.find(params[:id])
-
     respond_to do |format|
       if @deal.update_attributes(params[:deal])
         format.html { redirect_to @deal, notice: 'Deal was successfully updated.' }
@@ -69,18 +46,13 @@ class DealsController < ApplicationController
     end
   end
 
-  # DELETE /deals/1
-  # DELETE /deals/1.json
   def destroy
-    @deal = Deal.find(params[:id])
     @deal.destroy
-
     respond_to do |format|
       format.html { redirect_to deals_url }
       format.json { head :no_content }
     end
   end
-  
   
   def upload
     attachment = Image.new
@@ -97,4 +69,10 @@ class DealsController < ApplicationController
     end
     @remove_id = params[:id]
   end
+  
+  protected
+  def find_deal
+    @deal = Deal.find(params[:id])
+  end
+  
 end
