@@ -6,6 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery_nested_form
 //= require twitter/bootstrap
 //= require bootstrap-wysihtml5
 //= require_tree ./plugins/

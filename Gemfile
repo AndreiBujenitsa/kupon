@@ -38,6 +38,9 @@ gem 'haml'
 gem 'haml-rails'
 gem 'jquery-rails'
 
+# Form
+gem "nested_form"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
